@@ -45,10 +45,6 @@ public class blackJack {
 				System.out.println("You decided to end the round.");
 				round++;
 			}
-			if (dcard >= 17) {
-				System.out.println("The dealer decided to end the round.");
-				round++;
-			}
 		}
 		System.out.println("Your total score was " + pcard);
 		System.out.println("The dealer's total score was " + dcard);
