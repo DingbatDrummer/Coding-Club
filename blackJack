@@ -26,7 +26,7 @@ public class blackJack {
 			System.out.println("You drew " + draw);
 			System.out.println("Your total is " + pcard );
 			System.out.println(" ");
-				if (pcard >= 21) {
+				if (pcard > 21) {
 					System.out.println("You went over 21!");
 					pcard = 0;
 					round++;
@@ -35,7 +35,7 @@ public class blackJack {
 					draw = (int)(Math.random()*10 + 1);
 					dcard += draw;
 				}
-					if (dcard >= 21) {
+					if (dcard > 21) {
 						System.out.println("The dealer went over 21!");
 						dcard = 0;
 						round++;
