@@ -1,0 +1,71 @@
+package Default;
+import java.util.Scanner;
+public class blackJack {
+	public static void main(String[] args) {
+		System.out.println(" ");
+		System.out.println("B L A C K J A C K");
+		System.out.println(" ");
+		System.out.println("How to play:");
+		System.out.println(" ");
+		System.out.println("You will draw cards, trying to get as close as possible to 21,");
+		System.out.println("The dealer will also be drawing cards. Whoever gets closest will win.");
+		System.out.println("If you go over 21, the round will end and the dealer will win.");
+		System.out.println("The same applies if the dealer goes over 21.");
+		System.out.println("To draw a card, press d,");
+		System.out.println("To end the round, press e");
+		int round = 0;
+		int draw = 0;
+		int pcard = 0;
+		int dcard = 0;
+		while (round == 0) {
+			Scanner input = new Scanner( System.in );
+			String turn = input.next();
+		if(turn.equals("d")) {
+			draw = (int)(Math.random()*10 + 1);
+			pcard += draw;
+			System.out.println("You drew " + draw);
+			System.out.println("Your total is " + pcard );
+			System.out.println(" ");
+				if (pcard >= 21) {
+					System.out.println("You went over 21!");
+					pcard = 0;
+					round++;
+				}
+				if (dcard <= 17) {
+					draw = (int)(Math.random()*10 + 1);
+					dcard += draw;
+				}
+					if (dcard >= 21) {
+						System.out.println("The dealer went over 21!");
+						dcard = 0;
+						round++;
+					}
+		}
+			if(turn.equals("e")) {
+				System.out.println("You decided to end the round.");
+				round++;
+			}
+			if (dcard >= 17) {
+				System.out.println("The dealer decided to end the round.");
+				round++;
+			}
+		}
+		System.out.println("Your total score was " + pcard);
+		System.out.println("The dealer's total score was " + dcard);
+			if(pcard > dcard) {
+				System.out.println("You won!");
+			}
+			if (dcard > 21) {
+				System.out.println("You won!");
+			}
+			if(dcard > pcard) {
+				System.out.println("The dealer won.");
+			}
+			if (pcard > 21) {
+				System.out.println("The dealer won.");
+			}
+			if(pcard == dcard) {
+				System.out.println("You tied.");
+		}
+	}
+}
