@@ -26,23 +26,32 @@ public class blackJack {
 			System.out.println("You drew " + draw);
 			System.out.println("Your total is " + pcard );
 			System.out.println(" ");
-				if (pcard > 21) {
-					System.out.println("You went over 21!");
-					pcard = 0;
-					round++;
+				if (dcard > 17) {
+					System.out.println("The dealer decided not to draw a card.");
+					System.out.println(" ");
 				}
 				if (dcard <= 17) {
 					draw = (int)(Math.random()*10 + 1);
 					dcard += draw;
+					System.out.println("The dealer drew a card.");
+					System.out.println(" ");
 				}
-					if (dcard > 21) {
-						System.out.println("The dealer went over 21!");
-						dcard = 0;
-						round++;
-					}
+						if (pcard > 21) {
+							System.out.println("You went over 21!");
+							System.out.println(" ");
+							pcard = 0;
+							round++;
+						}
+						if (dcard > 21) {
+							System.out.println("The dealer went over 21!");
+							System.out.println(" ");
+							dcard = 0;
+							round++;
+						}
 		}
 			if(turn.equals("e")) {
 				System.out.println("You decided to end the round.");
+				System.out.println(" ");
 				round++;
 			}
 		}
